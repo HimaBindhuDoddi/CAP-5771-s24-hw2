@@ -135,45 +135,45 @@ def question4():
     #  'quantitative', 'interval', 'ratio'
     # If you have a choice between 'binary' and 'discrete', choose 'binary'
 
-    answer["a"] = []
+    answer["a"] = ['binary','qualitative','ordinal']
 
     # Explain if there is more than one interpretation. Repeat for the other questions. At least five words that form a sentence.
     answer["a: explain"] = ""
 
-    answer["b"] = []
+    answer["b"] = ['continuous','quantitative','ratio']
     answer["b: explain"] = ""
 
-    answer["c"] = []
+    answer["c"] = ['discrete','qualitative','ordinal']
     answer["c: explain"] = ""
 
-    answer["d"] = []
+    answer["d"] = ['continuous','quantitative','ratio']
     answer["d: explain"] = ""
 
-    answer["e"] = []
+    answer["e"] = ['discrete','qualitative','ordinal']
     answer["e: explain"] = ""
 
-    answer["f"] = []
+    answer["f"] = ['continuous','quantitative','ratio']
     answer["f: explain"] = ""
 
-    answer["g"] = []
+    answer["g"] = ['discrete','quantitative','ratio']
     answer["g: explain"] = ""
 
-    answer["h"] = []
+    answer["h"] = ['discrete','qualitative','nominal']
     answer["h: explain"] = ""
 
-    answer["i"] = []
+    answer["i"] = ['discrete','qualitative','ordinal']
     answer["i: explain"] = ""
 
-    answer["j"] = []
+    answer["j"] = ['discrete','qualitative','ordinal']
     answer["j: explain"] = ""
 
-    answer["k"] = []
+    answer["k"] = ['continuous','quantitative','ratio']
     answer["k: explain"] = ""
 
-    answer["l"] = []
+    answer["l"] = ['discrete','quantitative','ratio']
     answer["l: explain"] = ""
 
-    answer["m"] = []
+    answer["m"] = ['discrete','qualitative','nominal']
     answer["m: explain"] = ""
 
     return answer
