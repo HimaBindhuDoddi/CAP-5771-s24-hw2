@@ -104,9 +104,16 @@ def question3():
 
     # float
     answer["(a) Gini, overall"] = 0.0
+    # c0 = 10
+    # c1 = 10
+    # tot =20
+    # 1 - [ (c0/tot)**2 +(c1/tot)**2 ]
+    # 1- 1 =0
+    
 
     # float
     answer["(b) Gini, ID"] = 0.0
+    # each id is unique, so 
     answer["(c) Gini, Gender"] = 0.0
     answer["(d) Gini, Car type"] = 0.64
     answer["(e) Gini, Shirt type"] = 0.735
