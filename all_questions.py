@@ -23,44 +23,44 @@ def question1():
     level2_left = {}
     level2_right = {}
 
-    level1["smoking"] = 0.
-    level1["smoking_info_gain"] = 0.
+    level1["smoking"] = 1.0
+    level1["smoking_info_gain"] = 0.7219
 
-    level1["cough"] = 0.
-    level1["cough_info_gain"] = 0.
+    level1["cough"] = -1.
+    level1["cough_info_gain"] = 0.965
 
-    level1["radon"] = 0.
-    level1["radon_info_gain"] = 0.
+    level1["radon"] = -1.0
+    level1["radon_info_gain"] = 0.7635
 
-    level1["weight_loss"] = 0.0
-    level1["weight_loss_info_gain"] = 0.
+    level1["weight_loss"] = -1.0
+    level1["weight_loss_info_gain"] = 0.9709
 
-    level2_left["smoking"] = 0.
+    level2_left["smoking"] = -1.0
     level2_left["smoking_info_gain"] = 0.
-    level2_right["smoking"] = 0.
+    level2_right["smoking"] = -1.0
     level2_right["smoking_info_gain"] = 0.
 
-    level2_left["radon"] = 0.
+    level2_left["radon"] = -1.
     level2_left["radon_info_gain"] = 0.
 
-    level2_left["cough"] = 0.
+    level2_left["cough"] = 1.0
     level2_left["cough_info_gain"] = 0.
 
-    level2_left["weight_loss"] = 0.
+    level2_left["weight_loss"] = -1.0
     level2_left["weight_loss_info_gain"] = 0.
 
-    level2_right["radon"] = 0.
+    level2_right["radon"] = -1.
     level2_right["radon_info_gain"] = 0.
 
-    level2_right["cough"] = 0.
+    level2_right["cough"] = 1.0
     level2_right["cough_info_gain"] = 0.
 
-    level2_right["weight_loss"] = 0.
+    level2_right["weight_loss"] = -1.
     level2_right["weight_loss_info_gain"] = 0.
 
-    answer["level1"] = level1
-    answer["level2_left"] = level2_left
-    answer["level2_right"] = level2_right
+    answer["level1"] = "smoking"
+    answer["level2_left"] = "cough"
+    answer["level2_right"] = "radon"
 
     # Fill up `construct_tree``
     # tree, training_error = construct_tree()
