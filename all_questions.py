@@ -103,15 +103,15 @@ def question3():
     answer = {}
 
     # float
-    answer["(a) Gini, overall"] = 0.
+    answer["(a) Gini, overall"] = 0.0
 
     # float
     answer["(b) Gini, ID"] = 0.0
-    answer["(c) Gini, Gender"] = 0.
-    answer["(d) Gini, Car type"] = 0.
-    answer["(e) Gini, Shirt type"] = 0.
+    answer["(c) Gini, Gender"] = 0.0
+    answer["(d) Gini, Car type"] = 0.64
+    answer["(e) Gini, Shirt type"] = 0.735
 
-    answer["(f) attr for splitting"] = ""
+    answer["(f) attr for splitting"] = "Gender"
 
     # Explanatory text string
     answer["(f) explain choice"] = ""
@@ -188,12 +188,12 @@ def question5():
     # Read appropriate section of book chapter 3
 
     # string: one of 'Model 1' or 'Model 2'
-    explain["a"] = ""
-    explain["a explain"] = ""
+    explain["a"] = "Model 2"
+    explain["a explain"] = "For Model 2, both traning and test accuracies are alomst equal. But for Model 1, train accuracy is 98% and test accuracy is 72%, which means the model is overfitted."
 
     # string: one of 'Model 1' or 'Model 2'
-    explain["b"] = ""
-    explain["b explain"] = ""
+    explain["b"] = "Model 1"
+    explain["b explain"] = "I would prefer Model 1, as the accuracy is more than model 2. "
 
     explain["c similarity"] = ""
     explain["c similarity explain"] = ""
@@ -238,19 +238,19 @@ def question7():
     answer = {}
 
     # float
-    answer["a, info gain, ID"] = 0.
-    answer["b, info gain, Handedness"] = 0.
+    answer["a, info gain, ID"] = 1.0
+    answer["b, info gain, Handedness"] = 0.54
 
     # string: "ID" or "Handedness"
-    answer["c, which attrib"] = ""
+    answer["c, which attrib"] = "ID"
 
     # answer is a float
-    answer["d, gain ratio, ID"] = 0.
-    answer["e, gain ratio, Handedness"] = 0.
+    answer["d, gain ratio, ID"] = 0.0
+    answer["e, gain ratio, Handedness"] = 0.18
 
     # string: one of 'ID' or 'Handedness' based on gain ratio
     # choose the attribute with the largest gain ratio
-    answer["f, which attrib"] = ""
+    answer["f, which attrib"] = "ID"
 
     return answer
 
