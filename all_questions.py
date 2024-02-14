@@ -58,9 +58,9 @@ def question1():
     level2_right["weight_loss"] = -1.0
     level2_right["weight_loss_info_gain"] = 0.1711
 
-    answer["level1"] = "smoking"
-    answer["level2_left"] = "cough"
-    answer["level2_right"] = "radon"
+    answer["level1"] = level1
+    answer["level2_left"] = level2_left
+    answer["level2_right"] = level2_right
 
     # Fill up `construct_tree``
     # tree, training_error = construct_tree()
