@@ -127,7 +127,7 @@ def question3():
     answer["(d) Gini, Car type"] = 0.1622
     answer["(e) Gini, Shirt type"] = 0.4914
 
-    answer["(f) attr for splitting"] = "Gender"
+    answer["(f) attr for splitting"] = ""
 
     # Explanatory text string
     answer["(f) explain choice"] = ""
@@ -208,8 +208,8 @@ def question5():
     explain["a explain"] = "For Model 2, both traning and test accuracies are alomst equal. But for Model 1, train accuracy is 98% and test accuracy is 72%, which means the model is overfitted."
 
     # string: one of 'Model 1' or 'Model 2'
-    explain["b"] = "Model 1"
-    explain["b explain"] = "I would prefer Model 1, as the accuracy is more than model 2. "
+    explain["b"] = "Model 2"
+    explain["b explain"] = "  "
 
     explain["c similarity"] = ""
     explain["c similarity explain"] = ""
@@ -255,18 +255,18 @@ def question7():
 
     # float
     answer["a, info gain, ID"] = 1.0
-    answer["b, info gain, Handedness"] = 0.54
+    answer["b, info gain, Handedness"] = 0.531
 
     # string: "ID" or "Handedness"
     answer["c, which attrib"] = "ID"
 
     # answer is a float
-    answer["d, gain ratio, ID"] = 0.0
-    answer["e, gain ratio, Handedness"] = 0.18
+    answer["d, gain ratio, ID"] = 0.2313
+    answer["e, gain ratio, Handedness"] = 0.531
 
     # string: one of 'ID' or 'Handedness' based on gain ratio
     # choose the attribute with the largest gain ratio
-    answer["f, which attrib"] = "ID"
+    answer["f, which attrib"] = "Handedness"
 
     return answer
 
