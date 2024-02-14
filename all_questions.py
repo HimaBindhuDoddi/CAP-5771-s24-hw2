@@ -118,14 +118,14 @@ def question3():
     
 
     # float
-    answer["(b) Gini, ID"] = 0.5
-    # each id is unique, so  it will be  1- 20(1/20)**2 = 0.5
-    answer["(c) Gini, Gender"] = 0.5
-    # males: 10
-    # females: 10
-    # 1- [ (males/tot)**2
-    answer["(d) Gini, Car type"] = 0.64
-    answer["(e) Gini, Shirt type"] = 0.735
+    answer["(b) Gini, ID"] = 0.0
+    # each id is unique, so gini is 0.0
+    answer["(c) Gini, Gender"] = 0.48
+    # 
+    # 
+    # 
+    answer["(d) Gini, Car type"] = 0.1622
+    answer["(e) Gini, Shirt type"] = 0.4914
 
     answer["(f) attr for splitting"] = "Gender"
 
