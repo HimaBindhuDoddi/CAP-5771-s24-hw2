@@ -24,39 +24,39 @@ def question1():
     level2_right = {}
 
     level1["smoking"] = 1.0
-    level1["smoking_info_gain"] = 0.7219
+    level1["smoking_info_gain"] = 0.2781
 
-    level1["cough"] = -1.
-    level1["cough_info_gain"] = 0.965
+    level1["cough"] = -1.0
+    level1["cough_info_gain"] = 0.2365
 
     level1["radon"] = -1.0
-    level1["radon_info_gain"] = 0.7635
+    level1["radon_info_gain"] = 0.0350
 
     level1["weight_loss"] = -1.0
-    level1["weight_loss_info_gain"] = 0.9709
+    level1["weight_loss_info_gain"] = 0.0291
 
     level2_left["smoking"] = -1.0
-    level2_left["smoking_info_gain"] = 0.
+    level2_left["smoking_info_gain"] = 0.0
     level2_right["smoking"] = -1.0
-    level2_right["smoking_info_gain"] = 0.
+    level2_right["smoking_info_gain"] = 0.0
 
-    level2_left["radon"] = -1.
+    level2_left["radon"] = -1.0
     level2_left["radon_info_gain"] = 0.
 
     level2_left["cough"] = 1.0
-    level2_left["cough_info_gain"] = 0.
+    level2_left["cough_info_gain"] = 0.0729
 
     level2_left["weight_loss"] = -1.0
-    level2_left["weight_loss_info_gain"] = 0.
+    level2_left["weight_loss_info_gain"] = 0.1710
 
-    level2_right["radon"] = -1.
-    level2_right["radon_info_gain"] = 0.
+    level2_right["radon"] = 1.0
+    level2_right["radon_info_gain"] = 0.7219
 
-    level2_right["cough"] = 1.0
-    level2_right["cough_info_gain"] = 0.
+    level2_right["cough"] = -1.0
+    level2_right["cough_info_gain"] = 0.3219
 
-    level2_right["weight_loss"] = -1.
-    level2_right["weight_loss_info_gain"] = 0.
+    level2_right["weight_loss"] = -1.0
+    level2_right["weight_loss_info_gain"] = 0.1711
 
     answer["level1"] = "smoking"
     answer["level2_left"] = "cough"
@@ -64,7 +64,13 @@ def question1():
 
     # Fill up `construct_tree``
     # tree, training_error = construct_tree()
-    tree = u.BinaryTree("root")  # MUST STILL CREATE THE TREE *****
+    tree = u.BinaryTree("smoking")  # MUST STILL CREATE THE TREE *****
+    A = tree.insert_left("cough")
+    B = tree.insert_right("radon")
+    A.insert_left("Yes")
+    A.insert_right("No")
+    B.insert_left("Yes")
+    B.insert_right("No")
     answer["tree"] = tree  # use the Tree structure
     # answer["training_error"] = training_error
     answer["training_error"] = 0.0  
@@ -103,18 +109,21 @@ def question3():
     answer = {}
 
     # float
-    answer["(a) Gini, overall"] = 0.0
+    answer["(a) Gini, overall"] = 0.5
     # c0 = 10
     # c1 = 10
     # tot =20
     # 1 - [ (c0/tot)**2 +(c1/tot)**2 ]
-    # 1- 1 =0
+    # 1- 0.5 =0.5
     
 
     # float
-    answer["(b) Gini, ID"] = 0.0
-    # each id is unique, so 
-    answer["(c) Gini, Gender"] = 0.0
+    answer["(b) Gini, ID"] = 0.5
+    # each id is unique, so  it will be  1- 20(1/20)**2 = 0.5
+    answer["(c) Gini, Gender"] = 0.5
+    # males: 10
+    # females: 10
+    # 1- [ (males/tot)**2
     answer["(d) Gini, Car type"] = 0.64
     answer["(e) Gini, Shirt type"] = 0.735
 
