@@ -209,7 +209,7 @@ def question5():
 
     # string: one of 'Model 1' or 'Model 2'
     explain["b"] = "Model 2"
-    explain["b explain"] = "  "
+    explain["b explain"] = "Though Model 1 has 0.04 more accuracy, but based on the observations from the table we can choose Model 2"
 
     explain["c similarity"] = ""
     explain["c similarity explain"] = ""
