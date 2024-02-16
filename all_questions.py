@@ -24,16 +24,16 @@ def question1():
     level2_right = {}
 
     level1["smoking"] = 1.0
-    level1["smoking_info_gain"] = 0.2781
+    level1["smoking_info_gain"] = 0.2780
 
     level1["cough"] = -1.0
-    level1["cough_info_gain"] = 0.2365
+    level1["cough_info_gain"] = 0.0348
 
     level1["radon"] = -1.0
-    level1["radon_info_gain"] = 0.0350
+    level1["radon_info_gain"] = 0.2364
 
     level1["weight_loss"] = -1.0
-    level1["weight_loss_info_gain"] = 0.0291
+    level1["weight_loss_info_gain"] = 0.0290
 
     level2_left["smoking"] = -1.0
     level2_left["smoking_info_gain"] = 0.0
@@ -41,14 +41,15 @@ def question1():
     level2_right["smoking_info_gain"] = 0.0
 
     level2_left["radon"] = -1.0
-    level2_left["radon_info_gain"] = 0.
+    level2_left["radon_info_gain"] = 0.0729
 
     level2_left["cough"] = 1.0
-    level2_left["cough_info_gain"] = 0.0729
+    level2_left["cough_info_gain"] = 0.7219
 
     level2_left["weight_loss"] = -1.0
-    level2_left["weight_loss_info_gain"] = 0.1710
+    level2_left["weight_loss_info_gain"] = 0.1709
 
+    
     level2_right["radon"] = 1.0
     level2_right["radon_info_gain"] = 0.7219
 
@@ -56,25 +57,21 @@ def question1():
     level2_right["cough_info_gain"] = 0.3219
 
     level2_right["weight_loss"] = -1.0
-    level2_right["weight_loss_info_gain"] = 0.1711
+    level2_right["weight_loss_info_gain"] = 0.1709
 
     answer["level1"] = level1
     answer["level2_left"] = level2_left
     answer["level2_right"] = level2_right
 
-    # Fill up `construct_tree``
-    # tree, training_error = construct_tree()
-    tree = u.BinaryTree("smoking")  # MUST STILL CREATE THE TREE *****
-    A = tree.insert_left("cough")
-    B = tree.insert_right("radon")
+    tree=u.BinaryTree("smoking")
+    A=tree.insert_left("cough")
+    B=tree.insert_right("radon")
     A.insert_left("Yes")
     A.insert_right("No")
     B.insert_left("Yes")
     B.insert_right("No")
-    answer["tree"] = tree  # use the Tree structure
-    # answer["training_error"] = training_error
+    answer["tree"] = tree  
     answer["training_error"] = 0.0  
-
     return answer
 
 
@@ -85,18 +82,32 @@ def question2():
     answer = {}
 
     # Answers are floats
-    answer["(a) entropy_entire_data"] = 0.
+    answer["(a) entropy_entire_data"] = 1.425
+    
     # Infogain
-    answer["(b) x < 0.2"] = 0.
-    answer["(b) x < 0.7"] = 0.
-    answer["(b) y < 0.6"] = 0.
+    answer["(b) x < 0.2"] = 0.177
+    answer["(b) x < 0.7"] = 0.355
+    answer["(b) y < 0.6"] = 0.347
 
     # choose one of 'x=0.2', 'x=0.7', or 'x=0.6'
-    answer["(c) attribute"] = ""  
+    answer["(c) attribute"] = "x<=0.7"  
 
     # Use the Binary Tree structure to construct the tree
     # Answer is an instance of BinaryTree
-    tree = u.BinaryTree("Root")
+    tree = u.BinaryTree("x<=0.7")
+    A=tree.insert_left("y<=0.6")
+    A.insert_left("B")
+    C=A.insert_right("x<=0.2")
+    D=C.insert_left("y<=0.8")
+    C.insert_right("A")
+    D.insert_left("C")
+    D.insert_right("B")
+    B=tree.insert_right("y<=0.6")
+    E=B.insert_left("y<=0.3")
+    B.insert_right("A")
+    E.insert_left("A")
+    E.insert_right("C")
+    
     answer["(d) full decision tree"] = tree
 
     return answer
@@ -110,27 +121,17 @@ def question3():
 
     # float
     answer["(a) Gini, overall"] = 0.5
-    # c0 = 10
-    # c1 = 10
-    # tot =20
-    # 1 - [ (c0/tot)**2 +(c1/tot)**2 ]
-    # 1- 0.5 =0.5
-    
 
     # float
     answer["(b) Gini, ID"] = 0.0
-    # each id is unique, so gini is 0.0
     answer["(c) Gini, Gender"] = 0.48
-    # 
-    # 
-    # 
-    answer["(d) Gini, Car type"] = 0.1622
+    answer["(d) Gini, Car type"] = 0.1625
     answer["(e) Gini, Shirt type"] = 0.4914
 
-    answer["(f) attr for splitting"] = ""
+    answer["(f) attr for splitting"] = "Car type"
 
     # Explanatory text string
-    answer["(f) explain choice"] = ""
+    answer["(f) explain choice"] = "Car type has the lowest gini among the three attributes(Gender,Car type and Shirt)"
 
     return answer
 
@@ -198,6 +199,8 @@ def question4():
 # ----------------------------------------------------------------------
 
 
+
+
 def question5():
     explain = {}
 
@@ -210,13 +213,12 @@ def question5():
     # string: one of 'Model 1' or 'Model 2'
     explain["b"] = "Model 2"
     explain["b explain"] = "Though Model 1 has 0.04 more accuracy, but based on the observations from the table we can choose Model 2"
+    
+    explain["c similarity"] = "Regularization"
+    explain["c similarity explain"] = "Both strategies are designed to reduce overfitting by penalizing models based on their complexity."
 
-    explain["c similarity"] = ""
-    explain["c similarity explain"] = ""
-
-    explain["c difference"] = ""
-    explain["c difference explain"] = ""
-
+    explain["c difference"] = "Specificity"
+    explain["c difference explain"] = "MDL aims to create a model requiring fewer bits for its description, whereas pessimistic error adjusts tree error to avoid overly complex decision trees."
     return explain
 
 
@@ -229,20 +231,24 @@ def question6():
     # value of the form "z <= float" where "z" is "x" or "y"
     #  and "float" is a floating point number (notice: <=)
     # The value could also be "A" or "B" if it is a leaf
-    answer["a, level 1"] = ""
-    answer["a, level 2, right"] =""
-    answer["a, level 2, left"] = ""
-    answer["a, level 3, left"] = ""
-    answer["a, level 3, right"] = ""
+    answer["a, level 1"] = "x<=0.5"
+    answer["a, level 2, right"] ="A"
+    answer["a, level 2, left"] = "y<=0.4"
+    answer["a, level 3, left"] = "A"
+    answer["a, level 3, right"] = "B"
 
     # run each datum through the tree. Count the number of errors and divide by number of samples. .
     # Since we have areas: calculate the area that is misclassified (total area is unity)
     # float between 0 and 1
-    answer["b, expected error"] = 0.
+    answer["b, expected error"] = 0.06
 
     # Use u.BinaryTree to define the tree. Create your tree.
     # Replace "root node" by the proper node of the form "z <= float"
-    tree = u.BinaryTree("root note")
+    tree = u.BinaryTree("x<=0.5")
+    tree.insert_right("A")
+    L=tree.insert_left("y<=0.4")
+    L.insert_left("A")
+    L.insert_right("B")
 
     answer["c, tree"] = tree
 
@@ -261,7 +267,7 @@ def question7():
     answer["c, which attrib"] = "ID"
 
     # answer is a float
-    answer["d, gain ratio, ID"] = 0.2313
+    answer["d, gain ratio, ID"] = 0.231
     answer["e, gain ratio, Handedness"] = 0.531
 
     # string: one of 'ID' or 'Handedness' based on gain ratio
@@ -269,6 +275,7 @@ def question7():
     answer["f, which attrib"] = "Handedness"
 
     return answer
+
 
 
 # ----------------------------------------------------------------------
